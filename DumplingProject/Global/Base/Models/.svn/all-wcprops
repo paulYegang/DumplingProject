@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/MMTravel/!svn/ver/2763/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Base/Models
+END
+AppManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/MMTravel/!svn/ver/2763/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Base/Models/AppManager.h
+END
+UserModel.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/MMTravel/!svn/ver/2078/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Base/Models/UserModel.h
+END
+AppManager.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/MMTravel/!svn/ver/2722/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Base/Models/AppManager.m
+END
+BaseResponseDto.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/MMTravel/!svn/ver/2025/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Base/Models/BaseResponseDto.h
+END
+UserModel.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/MMTravel/!svn/ver/1900/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Base/Models/UserModel.m
+END
+BaseResponseDto.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/MMTravel/!svn/ver/2025/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Base/Models/BaseResponseDto.m
+END

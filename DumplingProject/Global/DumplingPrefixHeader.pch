@@ -1,0 +1,26 @@
+//
+//  DumplingPrefixHeader.pch
+//  DumplingProject
+//
+//  Created by 叶刚 on 16/3/14.
+//  Copyright © 2016年 dumplingproject. All rights reserved.
+//
+
+#ifndef DumplingPrefixHeader_pch
+#define DumplingPrefixHeader_pch
+
+
+#import <Masonry/Masonry.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "JSONAPIClient.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <JSONModel/JSONModel.h>
+#import <AFNetworking.h>
+#import "AppConfig.h"
+#import "UIColor+RP.h"
+#import "BaseViewController.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* DumplingPrefixHeader_pch */

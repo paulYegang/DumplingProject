@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/MMTravel/!svn/ver/1575/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK
+END
+WBSDKCommentButton.h
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WBSDKCommentButton.h
+END
+WBHttpRequest+WeiboGame.h
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WBHttpRequest+WeiboGame.h
+END
+WeiboSDK+Statistics.h
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WeiboSDK+Statistics.h
+END
+WBHttpRequest+WeiboUser.h
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WBHttpRequest+WeiboUser.h
+END
+WBHttpRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WBHttpRequest.h
+END
+WBHttpRequest+WeiboToken.h
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WBHttpRequest+WeiboToken.h
+END
+WeiboUser.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WeiboUser.h
+END
+WBHttpRequest+WeiboShare.h
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WBHttpRequest+WeiboShare.h
+END
+libWeiboSDK.a
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/MMTravel/!svn/ver/1575/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/libWeiboSDK.a
+END
+WeiboSDK.h
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WeiboSDK.h
+END
+WBSDKBasicButton.h
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WBSDKBasicButton.h
+END
+WBSDKRelationshipButton.h
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/MMTravel/!svn/ver/1573/trunk/mobile/ios/MMTravel_New_simple/MMTravel/Global/Common/libraries/extends/SinaWeiboSDK/WBSDKRelationshipButton.h
+END
