@@ -7,8 +7,8 @@
 //
 
 #import "ExperienceViewController.h"
-
 #import "ExperienceSearchViewController.h"
+#import "ExperienceCell.h"
 
 @interface ExperienceViewController ()<UISearchResultsUpdating,UISearchBarDelegate>
 @property (nonatomic, strong) UISearchController *searchController;
@@ -105,14 +105,17 @@ static id _instace;
     return self.resultArray.count;
 }
 
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL"];
+    ExperienceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CELL"];
+        cell = [[ExperienceCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CELL"];
     }
 //    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = self.resultArray[indexPath.row];
+//    cell.textLabel.text = self.resultArray[indexPath.row];
     
     
     return cell;

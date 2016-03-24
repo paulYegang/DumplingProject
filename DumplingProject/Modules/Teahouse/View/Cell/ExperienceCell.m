@@ -73,8 +73,30 @@
         
     }];
     
+    _rewardImage = [[UIImageView alloc] init];
+    _rewardImage.backgroundColor = [UIColor clearColor];
+    _rewardImage.image = [UIImage imageNamed:@"_0001_悬赏"];
+    [self addSubview:_rewardImage];
+    
+    [_rewardImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(@0);
+        make.right.equalTo(@(-20));
+        make.width.height.equalTo(@40);
+    }];
+    
     
 
+    _rewardNumber = [[UILabel alloc] init];
+    _rewardNumber.textColor = [UIColor orangeColor];
+    _rewardNumber.text = @"+5000";
+    _rewardNumber.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:_rewardNumber];
+    
+    [_rewardNumber mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_rewardImage.mas_centerX);
+        make.centerY.equalTo(_rewardImage.mas_centerY).offset(20);
+    }];
+    
     
     
 
