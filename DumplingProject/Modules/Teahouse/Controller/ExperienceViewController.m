@@ -61,6 +61,7 @@ static id _instace;
     [super viewDidLoad];
     self.title = @"江湖经验";
     self.definesPresentationContext = YES;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +80,10 @@ static id _instace;
     [leftBtn setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem=leftBtn;
 
+    UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"返回按钮"] style:UIBarButtonItemStyleDone target:self action:@selector(leftBtnAction)];
+    rightBtn.tintColor = [UIColor whiteColor];
+    [rightBtn setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem=rightBtn;
     
     ExperienceSearchViewController *resultTVC = [[ExperienceSearchViewController alloc] init];
     UINavigationController *resultVC = [[UINavigationController alloc] initWithRootViewController:resultTVC];
@@ -106,7 +111,7 @@ static id _instace;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    return 90;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
