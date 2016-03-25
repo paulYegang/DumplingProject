@@ -8,7 +8,7 @@
 
 #import "ParliamentViewController.h"
 #import "IWantDumplingViewController.h"
-
+#import "UIImage+Color.h"
 @interface ParliamentViewController ()
 
 @end
@@ -30,6 +30,8 @@
     [rightBtn setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem=rightBtn;
     
+    
+    [self setupUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +44,11 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.tabBarController.tabBar.hidden = NO;
     self.iconImage.hidden = NO;
+
+    //去除naviagtionbar的边框颜色
+    UINavigationBar *bar=self.navigationController.navigationBar;
+    [bar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:50/255.0 green:127/255.0 blue:254/255.0 alpha:1]] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    bar.shadowImage=[[UIImage alloc]init];
 }
 
 //-(void)viewWillDisappear:(BOOL)animated{
@@ -60,15 +67,38 @@
 -(void)rightBtnAction{
     
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
+/**
+ *  创建segmentcontrol和tableview
  */
+-(void)setupUI{
+    
+    UIView *headView=[[UIView alloc]init];
+    headView.backgroundColor=[UIColor colorWithRed:50/255.0 green:127/255.0 blue:254/255.0 alpha:1];
+    [self.view addSubview:headView];
+    [headView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@50);
+        make.width.equalTo(@SCREEN_WIDTH);
+        make.top.equalTo(@0);
+        make.centerX.equalTo(@0);
+    }];
+    
+    
+    UISegmentedControl *segmentedControl=[[UISegmentedControl alloc]initWithItems:@[@"最近聊天",@"群组"]];
+    [headView addSubview:segmentedControl];
+    [segmentedControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(SCREEN_WIDTH*2/3));
+        make.height.equalTo(@35);
+        make.centerX.equalTo(@0);
+        make.top.equalTo(@0);
+    }];
+    segmentedControl.tintColor=[UIColor whiteColor];
+    segmentedControl.selectedSegmentIndex=0;
+    [segmentedControl setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15],
+                                               NSForegroundColorAttributeName:[UIColor colorWithRed:50/255.0 green:127/255.0 blue:254/255.0 alpha:1]}
+                                    forState:UIControlStateSelected];
+    [segmentedControl setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]}
+                                    forState:UIControlStateNormal];
+    
+   }
 
 @end

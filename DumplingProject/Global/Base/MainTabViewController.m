@@ -19,6 +19,15 @@
 
 @implementation MainTabViewController
 
+-(void)viewWillLayoutSubviews{
+
+    [super viewWillLayoutSubviews];
+    CGRect frame=self.tabBar.frame;
+    frame.size.height=60;
+    frame.origin.y=SCREEN_HEIGHT-60;
+    self.tabBar.frame=frame;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -43,7 +52,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tabBar.frame = CGRectMake(0, SCREEN_HEIGHT-60, SCREEN_WIDTH, 60);
+//    self.tabBar.frame = CGRectMake(0, SCREEN_HEIGHT-60, SCREEN_WIDTH, 0);
     
 
    }
@@ -62,8 +71,8 @@
     [self addChildViewController:nag];
 
     vc.tabBarItem.title = title;
-    vc.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-    [vc.tabBarItem setTitlePositionAdjustment:UIOffsetMake(5, 5)];
+    vc.tabBarItem.imageInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
+    [vc.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -5)];
     
     [vc.tabBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} forState:UIControlStateNormal];
     
