@@ -43,9 +43,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tabBar.frame = CGRectMake(0, SCREEN_HEIGHT-60, SCREEN_WIDTH, 60);
+    self.tabBar.frame = CGRectMake(0, SCREEN_HEIGHT-60, SCREEN_WIDTH, 0);
     
-
    }
 
 - (void)didReceiveMemoryWarning {

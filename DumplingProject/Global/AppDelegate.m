@@ -33,7 +33,7 @@
 //改变根视图
 -(void) changeRoot{
     
-    [self.window setRootViewController:[[MainTabViewController alloc] init]] ;
+     [self.window setRootViewController:[[MainTabViewController alloc] init]] ;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
