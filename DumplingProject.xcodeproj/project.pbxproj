@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0446D9AB1CA5387E00A999EC /* ParliamentNewGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0446D9AA1CA5387E00A999EC /* ParliamentNewGroupCell.m */; };
+		0453AB091CA5122700A9C271 /* ParliamentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453AB081CA5122700A9C271 /* ParliamentTableViewCell.m */; };
+		0453AB0C1CA514C300A9C271 /* ParliamentCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453AB0B1CA514C300A9C271 /* ParliamentCellModel.m */; };
 		5C56205C1CA1381A009F48B5 /* RecuritDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C56205B1CA1381A009F48B5 /* RecuritDetailViewController.m */; };
 		5C76F9BF1CA2641E00C91DD8 /* DumplingNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C76F9BE1CA2641E00C91DD8 /* DumplingNoticeViewController.m */; };
 		5C76F9C21CA2649400C91DD8 /* DumplingNOticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C76F9C11CA2649400C91DD8 /* DumplingNOticeCell.m */; };
@@ -84,6 +87,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0446D9A91CA5387E00A999EC /* ParliamentNewGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParliamentNewGroupCell.h; path = DumplingProject/Global/Common/ParliamentNewGroupCell.h; sourceTree = SOURCE_ROOT; };
+		0446D9AA1CA5387E00A999EC /* ParliamentNewGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParliamentNewGroupCell.m; path = DumplingProject/Global/Common/ParliamentNewGroupCell.m; sourceTree = SOURCE_ROOT; };
+		0453AB071CA5122700A9C271 /* ParliamentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParliamentTableViewCell.h; path = DumplingProject/Global/Common/ParliamentTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		0453AB081CA5122700A9C271 /* ParliamentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParliamentTableViewCell.m; path = DumplingProject/Global/Common/ParliamentTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		0453AB0A1CA514C300A9C271 /* ParliamentCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParliamentCellModel.h; path = DumplingProject/Global/Common/ParliamentCellModel.h; sourceTree = SOURCE_ROOT; };
+		0453AB0B1CA514C300A9C271 /* ParliamentCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParliamentCellModel.m; path = DumplingProject/Global/Common/ParliamentCellModel.m; sourceTree = SOURCE_ROOT; };
 		2050B1A796266D133212EBE1 /* Pods-DumplingProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DumplingProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-DumplingProject/Pods-DumplingProject.release.xcconfig"; sourceTree = "<group>"; };
 		3ED8E79DAFA622E725B3CF2F /* Pods-DumplingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DumplingProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DumplingProject/Pods-DumplingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		5C56205A1CA1381A009F48B5 /* RecuritDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecuritDetailViewController.h; sourceTree = "<group>"; };
@@ -732,6 +741,8 @@
 		5CF35DD21C99380E005D24BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0453AB0A1CA514C300A9C271 /* ParliamentCellModel.h */,
+				0453AB0B1CA514C300A9C271 /* ParliamentCellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -739,6 +750,10 @@
 		5CF35DD31C99380E005D24BD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0453AB071CA5122700A9C271 /* ParliamentTableViewCell.h */,
+				0453AB081CA5122700A9C271 /* ParliamentTableViewCell.m */,
+				0446D9A91CA5387E00A999EC /* ParliamentNewGroupCell.h */,
+				0446D9AA1CA5387E00A999EC /* ParliamentNewGroupCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1000,11 +1015,13 @@
 				5CF31C221C970FC2002374E2 /* ChagnePwdViewController.m in Sources */,
 				5C9AE16B1C97FC3E0030F56E /* KSGuideManager.m in Sources */,
 				5CF108C41C9A3D21008DD4C1 /* MainTabViewController.m in Sources */,
+				0446D9AB1CA5387E00A999EC /* ParliamentNewGroupCell.m in Sources */,
 				5CD141EE1CA113FD005E9598 /* RecruitViewController.m in Sources */,
 				5CA4C8AC1CA0DB6B009C69DB /* IWantDumplingViewController.m in Sources */,
 				5CD141F21CA116B6005E9598 /* RecruitCell.m in Sources */,
 				5CE11AE01C9F9545005EA626 /* UpLoadViewController.m in Sources */,
 				5CD141F61CA118C9005E9598 /* RecuritInNoticeViewController.m in Sources */,
+				0453AB0C1CA514C300A9C271 /* ParliamentCellModel.m in Sources */,
 				5CE11ADD1C9F86D9005EA626 /* ErrorCorrectionViewController.m in Sources */,
 				5CF1D3B01C9BE4500085CB2B /* RuleModel.m in Sources */,
 				5CF108C71C9A3D80008DD4C1 /* ParliamentViewController.m in Sources */,
@@ -1026,6 +1043,7 @@
 				5C92592B1C96B2B6000FC075 /* NoticeView.m in Sources */,
 				5CF31C191C9703A2002374E2 /* RegistView.m in Sources */,
 				5CF3B1E71CA3BF2E00D060FC /* ExperienceCell.m in Sources */,
+				0453AB091CA5122700A9C271 /* ParliamentTableViewCell.m in Sources */,
 				5CF108D01C9A3DFE008DD4C1 /* FriendsViewController.m in Sources */,
 				5CF31C231C970FC2002374E2 /* changePwdView.m in Sources */,
 				5CF108CD1C9A3DEC008DD4C1 /* MainNoticeViewController.m in Sources */,
