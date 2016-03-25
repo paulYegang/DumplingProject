@@ -55,6 +55,7 @@
 		5CF1D3A91C9BAE6C0085CB2B /* NewRuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1D3A81C9BAE6C0085CB2B /* NewRuleViewController.m */; };
 		5CF1D3AD1C9BDF420085CB2B /* NewRuleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1D3AC1C9BDF420085CB2B /* NewRuleCell.m */; };
 		5CF1D3B01C9BE4500085CB2B /* RuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1D3AF1C9BE4500085CB2B /* RuleModel.m */; };
+		5CF1D9731CA50AA9005B8E9E /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1D9721CA50AA9005B8E9E /* UIImage+Color.m */; };
 		5CF31C161C970375002374E2 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF31C151C970375002374E2 /* RegistViewController.m */; };
 		5CF31C191C9703A2002374E2 /* RegistView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF31C181C9703A2002374E2 /* RegistView.m */; };
 		5CF31C221C970FC2002374E2 /* ChagnePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF31C1D1C970FC2002374E2 /* ChagnePwdViewController.m */; };
@@ -177,6 +178,8 @@
 		5CF1D3AC1C9BDF420085CB2B /* NewRuleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRuleCell.m; sourceTree = "<group>"; };
 		5CF1D3AE1C9BE4500085CB2B /* RuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuleModel.h; sourceTree = "<group>"; };
 		5CF1D3AF1C9BE4500085CB2B /* RuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuleModel.m; sourceTree = "<group>"; };
+		5CF1D9711CA50AA9005B8E9E /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		5CF1D9721CA50AA9005B8E9E /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		5CF31C141C970375002374E2 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		5CF31C151C970375002374E2 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		5CF31C171C9703A2002374E2 /* RegistView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistView.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 		5C92589A1C96643B000FC075 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5CF1D9711CA50AA9005B8E9E /* UIImage+Color.h */,
+				5CF1D9721CA50AA9005B8E9E /* UIImage+Color.m */,
 				5C9259191C966636000FC075 /* JSONAPIClient.h */,
 				5C92591A1C966636000FC075 /* JSONAPIClient.m */,
 				5C92591B1C966636000FC075 /* UIColor+RP.h */,
@@ -1013,6 +1018,7 @@
 				5CE11ADA1C9F8170005EA626 /* ReadRuleViewController.m in Sources */,
 				5CC781811C9651FB00E9CF48 /* AppDelegate.m in Sources */,
 				5C76F9C61CA26B0D00C91DD8 /* ExperienceViewController.m in Sources */,
+				5CF1D9731CA50AA9005B8E9E /* UIImage+Color.m in Sources */,
 				5C56205C1CA1381A009F48B5 /* RecuritDetailViewController.m in Sources */,
 				5CC781831C9651FB00E9CF48 /* main.m in Sources */,
 				5CD141FC1CA12500005E9598 /* RecuritModel.m in Sources */,

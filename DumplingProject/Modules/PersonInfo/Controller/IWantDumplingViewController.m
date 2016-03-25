@@ -36,7 +36,7 @@
     [self.view addSubview:back];
     
     [back mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@80);
+        make.top.equalTo(@16);
         make.left.equalTo(@20);
         make.right.equalTo(@(-20));
         make.bottom.equalTo(@(-16));
