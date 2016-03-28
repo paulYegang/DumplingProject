@@ -16,7 +16,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    _tableView=[[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
+    _tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStyleGrouped];
     _tableView.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:_tableView];
     _tableView.dataSource=self;
