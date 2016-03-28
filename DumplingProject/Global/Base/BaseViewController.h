@@ -11,4 +11,6 @@
 @interface BaseViewController : UIViewController
 +(instancetype)shareInstanceType;
 @property (nonatomic, strong)  UIImageView *iconImage;
+
+-(void)addSeperator:(UITableViewCell *)cell;
 @end

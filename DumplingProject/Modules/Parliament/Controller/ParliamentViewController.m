@@ -16,6 +16,9 @@ typedef NS_ENUM(NSInteger,TableViewCurrentType){
 #import "UIImage+Color.h"
 #import "ParliamentTableViewCell.h"
 #import "ParliamentNewGroupCell.h"
+#import "NewGroupTableViewController.h"
+#import "MessageViewController.h"
+#import "GroupSessionViewController.h"
 @interface ParliamentViewController ()<UITableViewDelegate,UITableViewDataSource,ParliamentNewGroupCellDelegate>
 
 @property(nonatomic,strong)UISegmentedControl *segmentedControl;
@@ -32,13 +35,13 @@ static int count=10;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"议会";
-    
+    //TODO:navi left and right buttonitem click actions
     UIBarButtonItem * leftBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"个人中心按钮"] style:UIBarButtonItemStyleDone target:self action:@selector(leftBtnAction)];
     leftBtn.tintColor = [UIColor whiteColor];
     [leftBtn setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem=leftBtn;
     
-    UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"消息按钮"] style:UIBarButtonItemStyleDone target:self action:@selector(leftBtnAction)];
+    UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"消息按钮"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBtnAction)];
     rightBtn.tintColor = [UIColor whiteColor];
     [rightBtn setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem=rightBtn;
@@ -78,7 +81,9 @@ static int count=10;
 
 //打开消息中心
 -(void)rightBtnAction{
-    
+    MessageViewController *vc=[[MessageViewController alloc]init];
+    vc.title=@"消息";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark -创建UI
 -(void)setupUI{
@@ -159,12 +164,16 @@ static int count=10;
     if (_tableViewType==TableViewCurrentTypeGroup && indexPath.row==0) {
         ParliamentNewGroupCell *cell=[tableView dequeueReusableCellWithIdentifier:@"newgroup"];
         cell.delegate=self;
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
         return cell;
     }
     
     ParliamentTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text=[NSString stringWithFormat:@"test%ld",(long)indexPath.row];
     cell.badgeNum=indexPath.row;
+    ParliamentCellModel *model=[[ParliamentCellModel alloc]init];
+    model.title=@"上院讨论群";
+    cell.model=model;
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -172,7 +181,7 @@ static int count=10;
     return SCREEN_HEIGHT*0.12;
 }
 
-#pragma mark -删除操作
+#pragma mark -tableviewcell的删除操作
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除";
 }
@@ -188,6 +197,17 @@ static int count=10;
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [tableView endUpdates];
 }
+#pragma mark -tableviewcell的点击操作
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //TODO:cell jumpTo VC with model
+    if (_tableViewType==TableViewCurrentTypeGroup && indexPath.row==0)
+        return;
+    ParliamentTableViewCell *cell=(ParliamentTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    GroupSessionViewController *vc=[[GroupSessionViewController alloc]init];
+    vc.title=cell.model.title;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 #pragma mark -sectionHeight
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -201,15 +221,19 @@ static int count=10;
 #pragma mark -新建群组
 -(void)newGroupBtnDidClick:(ParliamentNewGroupCell *)cell{
     //TODO:新建群组操作
-    NSLog(@"%s--新建群组",__func__);
-
+//    NSLog(@"%s--新建群组",__func__);
+    NewGroupTableViewController *vc=[[NewGroupTableViewController alloc]init];
+    vc.title=@"新建群组";
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -setter and getter
 -(void)setTableViewType:(TableViewCurrentType)tableViewType{
     _tableViewType=tableViewType;
     
-    //tableview switch animation
+
+    
+    //tableview switch animation1
     switch (tableViewType) {
         case TableViewCurrentTypeRecently:
             [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
@@ -220,7 +244,29 @@ static int count=10;
         default:
             break;
     }
+
+    
+    [_tableView reloadData];
+
+    
+//    //optional:tableview switch animation2
+//    CATransition *animation=[CATransition animation];
+//    animation.type=kCATransitionPush;
+//    switch (tableViewType) {
+//        case TableViewCurrentTypeRecently:
+//            animation.subtype=kCATransitionFromLeft;
+//            break;
+//        case TableViewCurrentTypeGroup:
+//            animation.subtype=kCATransitionFromRight;
+//            break;
+//        default:
+//            break;
+//    }
+//    animation.duration=0.25;
+//    [_tableView.layer addAnimation:animation forKey:@"UITableViewReloadDataAnimationKey"];
+    
     
 }
+
 
 @end

@@ -23,7 +23,7 @@
 
     [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:50/255.0 green:127/255.0 blue:254/255.0 alpha:1];
 //    self.view.backgroundColor = [UIColor whiteColor];
-    
+    [UINavigationBar appearance].tintColor=[UIColor whiteColor];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:19]};
     // Do any additional setup after loading the view.
     
@@ -76,5 +76,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+/**
+ *  给cell底部添加分隔条
+ *
+ *  @param cell cell
+ */
+-(void)addSeperator:(UITableViewCell *)cell{
+    //分隔条
+    UILabel *seperator=[[UILabel alloc]init];
+    seperator.backgroundColor=[UIColor colorWithWhite:0.8 alpha:0.5];
+    [cell.contentView addSubview:seperator];
+    [seperator mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@1);
+        make.width.equalTo(@(SCREEN_WIDTH));
+        make.bottom.equalTo(@0);
+        make.centerX.equalTo(@0);
+    }];
+    
+}
 
 @end

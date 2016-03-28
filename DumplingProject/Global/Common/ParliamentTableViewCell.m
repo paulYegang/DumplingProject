@@ -11,6 +11,7 @@
 @interface ParliamentTableViewCell ()
 
 @property(nonatomic,strong)UILabel *badgeLabel;
+@property(nonatomic,weak)UILabel *titleLabel;
 
 @end
 
@@ -34,7 +35,7 @@
         make.bottom.equalTo(@(-10));
         make.width.equalTo(iconView.mas_height);
     }];
-    iconView.image=[UIImage imageWithColor:[UIColor grayColor]];
+    iconView.image=[UIImage imageNamed:@"_0002_群组"];
     
     //2、badge
     _badgeLabel=[[UILabel alloc]init];
@@ -53,24 +54,24 @@
     _badgeLabel.text=@"0";
     
     //3、名称
-    UILabel *title=[[UILabel alloc]init];
-    [self.contentView addSubview:title];
-    [title mas_makeConstraints:^(MASConstraintMaker *make) {
+    UILabel *titleLabel=[[UILabel alloc]init];
+    [self.contentView addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(iconView.mas_right).offset(10);
         make.top.equalTo(@15);
         make.height.equalTo(@13);
     }];
-    title.text=@"杭州讨论群";
-    title.font=[UIFont systemFontOfSize:15];
-    [title sizeToFit];
-    
+    titleLabel.text=@"杭州讨论群";
+    titleLabel.font=[UIFont systemFontOfSize:15];
+    [titleLabel sizeToFit];
+    _titleLabel=titleLabel;
     //4、lastMessage
     UILabel *lastMsgLabel=[[UILabel alloc]init];
     [self.contentView addSubview:lastMsgLabel];
     [lastMsgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(@(-15));
         make.height.equalTo(@13);
-        make.left.equalTo(title.mas_left);
+        make.left.equalTo(titleLabel.mas_left);
         make.right.equalTo(self.contentView.mas_right).offset(-10);
     }];
     lastMsgLabel.font=[UIFont systemFontOfSize:11];
@@ -82,7 +83,7 @@
     UILabel *timeLabel=[[UILabel alloc]init];
     [self.contentView addSubview:timeLabel];
     [timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(title.mas_top);
+        make.top.equalTo(titleLabel.mas_top);
         make.height.equalTo(@13);
         make.right.equalTo(self.contentView.mas_right).offset(-10);
     }];
@@ -95,6 +96,7 @@
 
 -(void)setModel:(ParliamentCellModel *)model{
     _model=model;
+    _titleLabel.text=model.title;
 }
 -(void)setBadgeNum:(NSInteger)badgeNum{
     _badgeNum=badgeNum;
