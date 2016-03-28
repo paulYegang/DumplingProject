@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExperienceCell : UITableViewCell
+@interface UnsolvedExperienceCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView * iconImage;
 @property (nonatomic, strong) UILabel * nameCompanydate;

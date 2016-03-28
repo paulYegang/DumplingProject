@@ -8,12 +8,17 @@
 
 #import "ExperienceViewController.h"
 #import "ExperienceSearchViewController.h"
-#import "ExperienceCell.h"
-
-@interface ExperienceViewController ()<UISearchResultsUpdating,UISearchBarDelegate>
+#import "UnsolvedExperienceCell.h"
+#import "SelectBtn.h"
+#import "UnResolveViewController.h"
+#import "PopoverView.h"
+#import "PopMenuViewController.h"
+#import "TransitionDelegate.h"
+@interface ExperienceViewController ()<UISearchResultsUpdating,UISearchBarDelegate,SelectBtnDelegate>
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *resultArray;
 @property (nonatomic, strong) NSMutableArray *tempsArray;
+@property (nonatomic, strong) TransitionDelegate *trans;
 @end
 
 @implementation ExperienceViewController
@@ -28,6 +33,28 @@ static id _instace;
     return _instace;
 }
 
+-(TransitionDelegate *)trans{
+    if (_trans ==nil) {
+        _trans = [[TransitionDelegate alloc] init];
+    }
+    return _trans;
+}
+
+//返回上一页面
+-(void)leftBtnAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+//打开我要提问
+-(void) rigthBtnAction:(UIButton*)sender{
+    PopMenuViewController *popmenu = [[PopMenuViewController alloc] init];
+    popmenu.modalPresentationStyle = UIModalPresentationCustom;    
+    popmenu.transitioningDelegate =  self.trans;
+    [self presentViewController:popmenu animated:YES completion:^{
+        
+    }];
+
+}
 - (NSMutableArray *)resultArray{
     if (!_resultArray) {
         _resultArray = [NSMutableArray array];
@@ -61,6 +88,7 @@ static id _instace;
     [super viewDidLoad];
     self.title = @"江湖经验";
     self.definesPresentationContext = YES;
+    self.tableView.frame = CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -69,10 +97,7 @@ static id _instace;
     // Dispose of any resources that can be recreated.
 }
 
-//返回上一页面
--(void)leftBtnAction{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 
 - (void)initSearchController{
     UIBarButtonItem * leftBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"返回按钮"] style:UIBarButtonItemStyleDone target:self action:@selector(leftBtnAction)];
@@ -80,7 +105,7 @@ static id _instace;
     [leftBtn setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem=leftBtn;
 
-    UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"返回按钮"] style:UIBarButtonItemStyleDone target:self action:@selector(leftBtnAction)];
+    UIBarButtonItem * rightBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"返回按钮"] style:UIBarButtonItemStyleDone target:self action:@selector(rigthBtnAction:)];
     rightBtn.tintColor = [UIColor whiteColor];
     [rightBtn setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem=rightBtn;
@@ -93,7 +118,9 @@ static id _instace;
     //self.searchController.dimsBackgroundDuringPresentation = NO;
     //self.searchController.hidesNavigationBarDuringPresentation = NO;
     
+    SelectBtn *selecBtns = [[SelectBtn alloc] initWithLeftTitle:@"未解答" rightTitle:@"已解答"];
     
+  
     self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,self.searchController.searchBar.frame.origin.y,self.searchController.searchBar.frame.size.width,44);
     self.tableView.tableHeaderView = self.searchController.searchBar;
 //    self.searchController.searchBar.barTintColor = [UIColor redColor];
@@ -115,9 +142,9 @@ static id _instace;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ExperienceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL"];
+    UnsolvedExperienceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL"];
     if (cell == nil) {
-        cell = [[ExperienceCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CELL"];
+        cell = [[UnsolvedExperienceCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CELL"];
     }
 //    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
 //    cell.textLabel.text = self.resultArray[indexPath.row];
@@ -130,6 +157,11 @@ static id _instace;
     return 0;
 }
 
+#pragma jump to UnResolveviewController to check answer of the question
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UnResolveViewController *resolve = [UnResolveViewController shareInstanceType];
+    [self.navigationController pushViewController:resolve animated:YES];
+}
 
 #pragma mark - UISearchResultsUpdating
 

@@ -49,11 +49,11 @@
 -(void) rightBtnAction{
     
     
-//    ErrorCorrectionViewController *errors = [[ErrorCorrectionViewController alloc] init];
-//    [self.navigationController pushViewController:errors animated:YES];
+    ErrorCorrectionViewController *errors = [[ErrorCorrectionViewController alloc] init];
+    [self.navigationController pushViewController:errors animated:YES];
     
-    UpLoadViewController *upload = [[UpLoadViewController alloc] init];
-    [self.navigationController pushViewController:upload animated:YES];
+//    UpLoadViewController *upload = [[UpLoadViewController alloc] init];
+//    [self.navigationController pushViewController:upload animated:YES];
 }
 /*
 #pragma mark - Navigation

@@ -6,9 +6,9 @@
 //  Copyright © 2016年 dumplingproject. All rights reserved.
 //
 
-#import "ExperienceCell.h"
+#import "UnsolvedExperienceCell.h"
 
-@implementation ExperienceCell
+@implementation UnsolvedExperienceCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -46,7 +46,7 @@
     
     _nameCompanydate = [[UILabel alloc] init];
     _nameCompanydate.text = @"饺子3号-公司治理-2015.11.20";
-    _nameCompanydate.font = [UIFont systemFontOfSize:14];
+    _nameCompanydate.font = [UIFont systemFontOfSize:13];
     _nameCompanydate.backgroundColor = [UIColor clearColor];
     _nameCompanydate.textColor = [UIColor grayColor];
     [self addSubview:_nameCompanydate];
@@ -62,7 +62,7 @@
     
     _questionLabel = [[UILabel alloc] init];
     _questionLabel.text = @"基金管理公司需要设立董事会吗？如何确定设立细节？";
-    _questionLabel.font = [UIFont systemFontOfSize:15];
+    _questionLabel.font = [UIFont systemFontOfSize:14];
     _questionLabel.numberOfLines = 0;
     _questionLabel.backgroundColor = [UIColor clearColor];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:_questionLabel.text];
