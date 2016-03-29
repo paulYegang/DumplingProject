@@ -50,15 +50,15 @@
     UIButton *rightBtn=[[UIButton alloc]init];
     [self.contentView addSubview:rightBtn];
     [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@45);
-        make.height.equalTo(@24);
+        make.width.equalTo(@(SCREEN_WIDTH*0.15));
+        make.height.equalTo(@30);
         make.right.equalTo(@(-10));
         make.centerY.equalTo(@0);
     }];
     rightBtn.tag=1;
     [rightBtn setTitle:@"拒绝" forState:UIControlStateNormal];
     [rightBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    rightBtn.titleLabel.font=[UIFont systemFontOfSize:11];
+    rightBtn.titleLabel.font=[UIFont systemFontOfSize:13];
     [rightBtn setBackgroundImage:[UIImage imageNamed:@"_0001_赌馆下注按钮"] forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(btnsDidClick:) forControlEvents:UIControlEventTouchUpInside];
     self.rightBtn=rightBtn;
@@ -66,15 +66,15 @@
     UIButton *leftBtn=[[UIButton alloc]init];
     [self.contentView addSubview:leftBtn];
     [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@45);
-        make.height.equalTo(@24);
+        make.width.equalTo(@(SCREEN_WIDTH*0.15));
+        make.height.equalTo(@30);
         make.right.equalTo(rightBtn.mas_left).offset(-5);
         make.centerY.equalTo(@0);
     }];
     leftBtn.tag=0;
     [leftBtn setTitle:@"同意" forState:UIControlStateNormal];
     [leftBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    leftBtn.titleLabel.font=[UIFont systemFontOfSize:11];
+    leftBtn.titleLabel.font=[UIFont systemFontOfSize:13];
     [leftBtn setBackgroundImage:[UIImage imageNamed:@"_0001_赌馆下注按钮"] forState:UIControlStateNormal];
     [leftBtn addTarget:self action:@selector(btnsDidClick:) forControlEvents:UIControlEventTouchUpInside];
     self.leftBtn=leftBtn;

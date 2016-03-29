@@ -46,7 +46,7 @@
         cell.cellType=MessageCellTypeButtonShow;
     }
     cell.delegate=self;
-//    [self addSeperator:cell];
+    [self addSeperator:cell];
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
