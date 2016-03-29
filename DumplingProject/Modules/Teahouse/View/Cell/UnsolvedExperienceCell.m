@@ -64,6 +64,7 @@
     _questionLabel.text = @"基金管理公司需要设立董事会吗？如何确定设立细节？";
     _questionLabel.font = [UIFont systemFontOfSize:14];
     _questionLabel.numberOfLines = 0;
+    _questionLabel.preferredMaxLayoutWidth = 200;
     _questionLabel.backgroundColor = [UIColor clearColor];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:_questionLabel.text];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -80,7 +81,7 @@
         make.top.equalTo(_nameCompanydate.mas_bottom);
         make.bottom.equalTo(@0);
         make.left.equalTo(_iconImage.mas_right).offset(10);
-        make.width.equalTo(@230);
+        make.right.equalTo(@(-80));
         
     }];
     
@@ -92,7 +93,7 @@
     [_rewardImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(@0);
         make.right.equalTo(@(-20));
-        make.width.height.equalTo(@70);
+        make.width.height.equalTo(@60);
     }];
     
     
@@ -100,13 +101,13 @@
     _rewardNumber = [[UILabel alloc] init];
     _rewardNumber.textColor = [UIColor orangeColor];
     _rewardNumber.text = @"+5000";
-    _rewardNumber.font = [UIFont systemFontOfSize:15];
+    _rewardNumber.font = [UIFont systemFontOfSize:14];
     _rewardNumber.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_rewardNumber];
     
     [_rewardNumber mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_rewardImage.mas_centerX);
-        make.centerY.equalTo(_rewardImage.mas_centerY).offset(15);
+        make.centerY.equalTo(_rewardImage.mas_centerY).offset(10);
     }];
     
     

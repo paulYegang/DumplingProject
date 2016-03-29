@@ -1,31 +1,23 @@
 //
-//  PopMenuViewController.m
+//  MyQuestionViewController.m
 //  DumplingProject
 //
-//  Created by 叶刚 on 16/3/28.
+//  Created by 叶刚 on 16/3/29.
 //  Copyright © 2016年 dumplingproject. All rights reserved.
 //
 
-#import "PopMenuViewController.h"
+#import "MyQuestionViewController.h"
 
-@interface PopMenuViewController ()
+@interface MyQuestionViewController ()
 
 @end
 
-@implementation PopMenuViewController
+@implementation MyQuestionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor clearColor];
-    UIImageView *back = [[UIImageView alloc] init];
-    back.image = [UIImage imageNamed:@"22"];
-    [self.view addSubview:back];
-    
-    [back mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(@0);
-    }];
-    
+    self.title =@"我提出的问题";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,8 +25,12 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) setuPUI{
-    
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+    self.iconImage.hidden = YES;
+    //    self.iconImage.hidden = YES;
+    //    [self initSearchController];
 }
 /*
 #pragma mark - Navigation

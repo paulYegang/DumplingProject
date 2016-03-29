@@ -11,8 +11,12 @@
 #import "UnsolvedExperienceCell.h"
 #import "SelectBtn.h"
 #import "UnResolveViewController.h"
+#import "PopoverView.h"
 #import "PopMenuViewController.h"
 #import "TransitionDelegate.h"
+#import "AskQuestionViewController.h"
+#import "MyQuestionViewController.h"
+
 @interface ExperienceViewController ()<UISearchResultsUpdating,UISearchBarDelegate,SelectBtnDelegate>
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *resultArray;
@@ -31,7 +35,21 @@ static id _instace;
     });
     return _instace;
 }
+//我要提问,问题图片数组************************
+- (NSArray *) images {
+    return @[@"好友",
+             @"好友"
+             ];
+}
 
+- (NSArray *) titles {
+    return @[@"我要提问",
+             @"我的问题"
+             ];
+}
+//我要提问，问题标题***********************
+
+//弹窗效果代理实现
 -(TransitionDelegate *)trans{
     if (_trans ==nil) {
         _trans = [[TransitionDelegate alloc] init];
@@ -44,16 +62,50 @@ static id _instace;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-//打开我要提问
+//打开弹窗
 -(void) rigthBtnAction:(UIButton*)sender{
+    
     PopMenuViewController *popmenu = [[PopMenuViewController alloc] init];
     popmenu.modalPresentationStyle = UIModalPresentationCustom;    
     popmenu.transitioningDelegate =  self.trans;
+    popmenu.imageArr = [self images];
+    popmenu.titleArr = [self titles];
     [self presentViewController:popmenu animated:YES completion:^{
         
     }];
+    
+    //通过block实现cell点击事件
+    popmenu.indexpath = ^(NSInteger integer){
+        switch (integer) {
+            case 0:
+                [self errorView];
+                
+                break;
+            case 1:
+                [self buchongView];
+                break;
+            default:
+                break;
+        }
+    };
 
 }
+//***************************************跳转到我要提问，我的问题************************//
+
+-(void) buchongView{
+    MyQuestionViewController *upload = [[MyQuestionViewController alloc] init];
+    [self.navigationController pushViewController:upload animated:YES];
+    
+}
+
+-(void) errorView{
+    AskQuestionViewController *errors = [[AskQuestionViewController alloc] init];
+    [self.navigationController pushViewController:errors animated:YES];
+    
+}
+//***************************************跳转到我要提问，我的问题************************//
+
+//数据源
 - (NSMutableArray *)resultArray{
     if (!_resultArray) {
         _resultArray = [NSMutableArray array];
@@ -83,10 +135,13 @@ static id _instace;
     [super viewWillDisappear:animated];
     self.tabBarController.tabBar.hidden = NO;
 }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"江湖经验";
     self.definesPresentationContext = YES;
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.frame = CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -97,7 +152,7 @@ static id _instace;
 }
 
 
-
+//初始化
 - (void)initSearchController{
     UIBarButtonItem * leftBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"返回按钮"] style:UIBarButtonItemStyleDone target:self action:@selector(leftBtnAction)];
     leftBtn.tintColor = [UIColor whiteColor];
@@ -109,24 +164,23 @@ static id _instace;
     [rightBtn setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem=rightBtn;
     
+    //
     ExperienceSearchViewController *resultTVC = [[ExperienceSearchViewController alloc] init];
     UINavigationController *resultVC = [[UINavigationController alloc] initWithRootViewController:resultTVC];
     self.searchController = [[UISearchController alloc]initWithSearchResultsController:resultVC];
     self.searchController.searchResultsUpdater = self;
     
-    //self.searchController.dimsBackgroundDuringPresentation = NO;
-    //self.searchController.hidesNavigationBarDuringPresentation = NO;
-    
-    SelectBtn *selecBtns = [[SelectBtn alloc] initWithLeftTitle:@"未解答" rightTitle:@"已解答"];
+//    SelectBtn *selecBtns = [[SelectBtn alloc] initWithLeftTitle:@"未解答" rightTitle:@"已解答"];
     
   
     self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,self.searchController.searchBar.frame.origin.y,self.searchController.searchBar.frame.size.width,44);
+    
     self.tableView.tableHeaderView = self.searchController.searchBar;
 //    self.searchController.searchBar.barTintColor = [UIColor redColor];
     self.searchController.searchBar.barTintColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1];
     self.searchController.searchBar.delegate = self;
     self.searchController.searchBar.placeholder = @"搜索";
-    resultTVC.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+    resultTVC.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 1)];
 }
 
 

@@ -54,7 +54,7 @@
         make.centerY.equalTo(_iconimage.mas_centerY);
         make.height.equalTo(@20);
         make.left.equalTo(_iconimage.mas_right).offset(10);
-        make.width.equalTo(@230);
+        make.width.equalTo(@190);
         
     }];
     
