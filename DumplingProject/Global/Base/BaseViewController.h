@@ -13,4 +13,5 @@
 @property (nonatomic, strong)  UIImageView *iconImage;
 
 -(void)addSeperator:(UITableViewCell *)cell;
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)msg;
 @end

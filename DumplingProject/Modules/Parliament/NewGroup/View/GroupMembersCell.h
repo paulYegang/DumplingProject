@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GroupMembersCell : UITableViewCell
 
+@interface GroupMembersCell : UITableViewCell
+@property(nonatomic,strong)UICollectionView *collectionView;
+@property(nonatomic,strong)NSMutableArray *members;
 @end

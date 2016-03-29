@@ -6,6 +6,8 @@
 //  Copyright © 2016年 dumplingproject. All rights reserved.
 //
 
+#define GroupIconCellAddBtnClick @"GroupIconCellAddBtnClick"
+
 #import <UIKit/UIKit.h>
 
 @interface GroupIconCell : UITableViewCell
