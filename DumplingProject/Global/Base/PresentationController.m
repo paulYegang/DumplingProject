@@ -28,7 +28,7 @@
 -(void)containerViewWillLayoutSubviews{
     [self.containerView insertSubview:self.btnview atIndex:0];
      _btnview.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    self.presentedView.frame = CGRectMake(SCREEN_WIDTH- 120, 70, 100, 60);
+    self.presentedView.frame = CGRectMake(SCREEN_WIDTH- 130, 57, 120, 75);
 }
 
 -(void) clickAction{
