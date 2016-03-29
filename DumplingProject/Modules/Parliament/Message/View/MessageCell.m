@@ -50,7 +50,7 @@
     UIButton *rightBtn=[[UIButton alloc]init];
     [self.contentView addSubview:rightBtn];
     [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(SCREEN_WIDTH*0.15));
+        make.width.equalTo(@(SCREEN_WIDTH*0.16));
         make.height.equalTo(@30);
         make.right.equalTo(@(-10));
         make.centerY.equalTo(@0);
@@ -66,7 +66,7 @@
     UIButton *leftBtn=[[UIButton alloc]init];
     [self.contentView addSubview:leftBtn];
     [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(SCREEN_WIDTH*0.15));
+        make.width.equalTo(@(SCREEN_WIDTH*0.16));
         make.height.equalTo(@30);
         make.right.equalTo(rightBtn.mas_left).offset(-5);
         make.centerY.equalTo(@0);
@@ -77,6 +77,7 @@
     leftBtn.titleLabel.font=[UIFont systemFontOfSize:13];
     [leftBtn setBackgroundImage:[UIImage imageNamed:@"_0001_赌馆下注按钮"] forState:UIControlStateNormal];
     [leftBtn addTarget:self action:@selector(btnsDidClick:) forControlEvents:UIControlEventTouchUpInside];
+    
     self.leftBtn=leftBtn;
     
     

@@ -45,8 +45,10 @@
     if (indexPath.row%3==0) {
         cell.cellType=MessageCellTypeButtonShow;
     }
-    cell.delegate=self;
     [self addSeperator:cell];
+    cell.delegate=self;
+    
+    
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
