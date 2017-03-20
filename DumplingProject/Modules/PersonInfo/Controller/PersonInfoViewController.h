@@ -10,7 +10,4 @@
 
 @interface PersonInfoViewController : UIViewController
 
-/**
- this is 啊test
- */
 @end
